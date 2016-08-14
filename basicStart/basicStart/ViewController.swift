@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     
         //set time to generateMoreCircles
-        _ = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(self.genereteMoreCircles), userInfo: nil, repeats: true)
+        _ = NSTimer.scheduledTimerWithTimeInterval(0.11, target: self, selector: #selector(self.genereteMoreCircles), userInfo: nil, repeats: true)
         
         
     }
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         let fypos = CGFloat(pypos)
         
         //get rand range for circle size
-        let psize = arc4random_uniform(10) + 0;
+        let psize = arc4random_uniform(100) + 0;
         let fsize = CGFloat(psize)
         
         generateCircle(fxpos, ypos: fypos, size: fsize)
