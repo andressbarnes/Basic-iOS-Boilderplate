@@ -22,7 +22,7 @@ class CircleUIView: UIView {
 
     override func drawRect(rect: CGRect) {
         
-        let green_100: UIColor = UIColor(red: 0.000, green: 0.699, blue: 0.204, alpha: 1.000)
+        let green_100: UIColor = UIColor.whiteColor()
         
         let parentViewBounds = self.bounds
         let parentViewWidth = CGRectGetWidth(parentViewBounds)

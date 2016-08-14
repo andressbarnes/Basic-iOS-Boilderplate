@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     
         //set time to generateMoreCircles
-        _ = NSTimer.scheduledTimerWithTimeInterval(0.11, target: self, selector: #selector(self.genereteMoreCircles), userInfo: nil, repeats: true)
+        _ = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(self.genereteMoreCircles), userInfo: nil, repeats: true)
         
         
     }
@@ -34,8 +34,17 @@ class ViewController: UIViewController {
             testView.transform = CGAffineTransformMakeScale(3.0, 3.0)
             testView.alpha = 0.4
             }, completion: {(value: Bool) in
-                testView.removeFromSuperview()
+                UIView.animateWithDuration(0.2, delay: 0.0, options: .CurveEaseIn, animations: {
+                    testView.transform = CGAffineTransformMakeScale(4.1, 4.1)
+                    testView.alpha = 0.0
+                    }, completion: {(value: Bool) in
+                        testView.removeFromSuperview()
+                })
         })
+        
+
+        
+        
     }
     
     
@@ -48,18 +57,18 @@ class ViewController: UIViewController {
         let screenHeight = UInt32(screenSize.height)
         
         //get rand range for x and y positions
-        //let pxpos = arc4random_uniform(screenWidth) + 0;
-        //let pypos = arc4random_uniform(screenHeight) + 0;
-        
         let pxpos = arc4random_uniform(screenWidth) + 0;
-        let pypos = screenHeight/2;
+        let pypos = arc4random_uniform(screenHeight) + 0;
+        
+        //let pxpos = arc4random_uniform(screenWidth) + 0;
+        //let pypos = screenHeight/2;
         
         
         let fxpos = CGFloat(pxpos)
         let fypos = CGFloat(pypos)
         
         //get rand range for circle size
-        let psize = arc4random_uniform(100) + 0;
+        let psize = arc4random_uniform(30) + 0;
         let fsize = CGFloat(psize)
         
         generateCircle(fxpos, ypos: fypos, size: fsize)

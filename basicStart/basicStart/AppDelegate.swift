@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = navigationController
         self.window!.makeKeyAndVisible()
         //navigationController.setNavigationBarHidden(true, animated: false)
-        self.window!.backgroundColor = UIColor.whiteColor()
+        self.window!.backgroundColor = UIColor.purpleColor()
         
         
         return true
